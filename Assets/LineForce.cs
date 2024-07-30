@@ -34,7 +34,7 @@ public class LineForce : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (rbBall.velocity.magnitude < stopVelocity)
         {
@@ -76,10 +76,17 @@ public class LineForce : MonoBehaviour
         isAiming = false;
         lineRenderer.enabled = false;
         //Que siempre sea la trayectoria en vertical
-        Vector3 horizontalWorldPoint = new Vector3(-worldPoint.x, transform.position.y, -worldPoint.z);
-        Vector3 direction = (horizontalWorldPoint - transform.position).normalized;
-        float strength = Vector3.Distance(transform.position, horizontalWorldPoint);
-        rbBall.AddForce( direction * strength * shootPower);
+        //Vector3 horizontalWorldPoint = new Vector3(-worldPoint.x, transform.position.y, -worldPoint.z);
+        //Vector3 direction = (horizontalWorldPoint - transform.position).normalized;
+        Vector3 direction = (transform.position - worldPoint).normalized;
+        float strength = Vector3.Distance(transform.position, worldPoint);
+        //fuerza del tiro
+        rbBall.AddForce(direction * strength * shootPower);
+
+        //Para que no se pueda disparar varias veces
+        isIdle = false;
+
+
     }
 
     //Función que dibuja la escena en la línea
