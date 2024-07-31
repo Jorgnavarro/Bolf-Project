@@ -15,7 +15,7 @@ public class LimitRestartPosition : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            gameManager.GameDefined("JorgSpace");
+            gameManager.GameDefined("Escena Andres Gomez");
         }
     }
 
