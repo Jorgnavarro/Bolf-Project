@@ -147,6 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bolaRb: {fileID: 0}
   golpesSuperficies: {fileID: 19800000, guid: 41161e05419151247a27d57a668c87ee, type: 3}
+  targetFireWorks: {fileID: 19860484, guid: 6586ff0f14125534cae2f5d8f04b7871, type: 3}
 --- !u!1 &6875161515024504610
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class DetectorColisionesBola : MonoBehaviour
 {
     
     [SerializeField] Rigidbody bolaRb;
-    [SerializeField] ParticleSystem golpesSuperficies;
+    [SerializeField] ParticleSystem golpesSuperficies, targetFireWorks;
     
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,16 @@ public class DetectorColisionesBola : MonoBehaviour
         {
             SoundManager.Instance.soundManagerVFX.PlayOneShot(SoundManager.Instance.sonidosGolpes[2]);
             Instantiate(golpesSuperficies, transform.position, transform.rotation);
-        }            
+        }
+     
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if(other.gameObject.CompareTag("Target"))
+        {
+            SoundManager.Instance.soundManagerVFX.PlayOneShot(SoundManager.Instance.sonidosGolpes[5]);
+            Instantiate(targetFireWorks, transform.position, transform.rotation);
+        }    
     }
 
 }
