@@ -11,7 +11,7 @@ public class LineForce : MonoBehaviour
     [SerializeField] private float stopVelocity = .05f;
 
     [SerializeField] private float shootPower;
-    [SerializeField] ParticleSystem polvoParticula;
+    //[SerializeField] ParticleSystem polvoParticula;
 
     private Rigidbody rbBall;
 
@@ -86,8 +86,8 @@ public class LineForce : MonoBehaviour
 
         //Para que no se pueda disparar varias veces
         isIdle = false;
-        Instantiate(polvoParticula, transform.position, transform.rotation);
-        SoundManager.Instance.soundManagerVFX.PlayOneShot(SoundManager.Instance.sonidosGolpes[1]);
+        //Instantiate(polvoParticula, transform.position, transform.rotation);
+        //SoundManager.Instance.soundManagerVFX.PlayOneShot(SoundManager.Instance.sonidosGolpes[1]);
 
 
     }
