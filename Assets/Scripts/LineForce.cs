@@ -5,12 +5,13 @@ using UnityEngine;
 public class LineForce : MonoBehaviour
 {
 
-    //Línea que renderizamos para tiro
+    //Lï¿½nea que renderizamos para tiro
     [SerializeField] private LineRenderer lineRenderer;
 
     [SerializeField] private float stopVelocity = .05f;
 
     [SerializeField] private float shootPower;
+    [SerializeField] ParticleSystem polvoParticula;
 
     private Rigidbody rbBall;
 
@@ -27,7 +28,7 @@ public class LineForce : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        //Al hacer click comprobamos si el objeto está activo, sino apuntamos
+        //Al hacer click comprobamos si el objeto estï¿½ activo, sino apuntamos
         if (isIdle)
         {
             isAiming = true;
@@ -62,7 +63,7 @@ public class LineForce : MonoBehaviour
         {
             return;
         }
-        //Se dibujará la línea
+        //Se dibujarï¿½ la lï¿½nea
         DrawLine(worldPoint.Value);
 
         if (Input.GetMouseButtonUp(0))
@@ -85,14 +86,16 @@ public class LineForce : MonoBehaviour
 
         //Para que no se pueda disparar varias veces
         isIdle = false;
+        Instantiate(polvoParticula, transform.position, transform.rotation);
+        SoundManager.Instance.soundManagerVFX.PlayOneShot(SoundManager.Instance.sonidosGolpes[1]);
 
 
     }
 
-    //Función que dibuja la escena en la línea
+    //Funciï¿½n que dibuja la escena en la lï¿½nea
     private void DrawLine(Vector3 worldPoint)
     {
-        //Configuración de la línea con respecto al gameObject y la ubicación del click del mouse
+        //Configuraciï¿½n de la lï¿½nea con respecto al gameObject y la ubicaciï¿½n del click del mouse
         Vector3[] positions = { transform.position, worldPoint };
 
         lineRenderer.SetPositions(positions);
@@ -100,7 +103,7 @@ public class LineForce : MonoBehaviour
         lineRenderer.enabled = true;
     }
 
-    //Función que mide los planos en donde esté ubicado nuestro click
+    //Funciï¿½n que mide los planos en donde estï¿½ ubicado nuestro click
     private Vector3? CastMouseClickRay()
     {
         Vector3 screenMousePosFar = new Vector3(
