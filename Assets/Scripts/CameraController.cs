@@ -6,21 +6,21 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public Camera fixedCamera; // Cámara fija al jugador
-    public Camera movableCamera; // Cámara que puedes mover
+    public Camera movableCamera; // Cámara movible
 
     private bool useFixedCamera = true; // Controla qué cámara está activa
 
     void Start()
     {
-        // Asegúrate de que la cámara fija esté activa al iniciar
+        
         fixedCamera.gameObject.SetActive(true);
         movableCamera.gameObject.SetActive(false);
     }
 
     void Update()
     {
-        // Cambiar entre cámaras con la tecla 'C'
-        if (Input.GetKeyDown(KeyCode.C))
+        // Cambiar entre cámaras con la tecla 'space'
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             useFixedCamera = !useFixedCamera; // Alternar entre cámaras
             fixedCamera.gameObject.SetActive(useFixedCamera);
