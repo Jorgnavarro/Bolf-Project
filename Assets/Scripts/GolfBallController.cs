@@ -3,6 +3,7 @@ using UnityEngine;
 public class GolfBallController : MonoBehaviour
 {
     
+
     public float forceMagnitude = 10f; // Magnitud de la fuerza aplicada
     private Rigidbody rbBall;
 
