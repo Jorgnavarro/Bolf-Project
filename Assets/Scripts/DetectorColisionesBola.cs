@@ -20,7 +20,12 @@ public class DetectorColisionesBola : MonoBehaviour
         {
             SoundManager.Instance.soundManagerVFX.PlayOneShot(SoundManager.Instance.sonidosGolpes[0]);
             Instantiate(golpesSuperficies, transform.position, transform.rotation);
-        }    
+        }
+        if(other.gameObject.CompareTag("Ping"))
+        {
+            SoundManager.Instance.soundManagerVFX.PlayOneShot(SoundManager.Instance.sonidosGolpes[2]);
+            Instantiate(golpesSuperficies, transform.position, transform.rotation);
+        }            
     }
 
 }

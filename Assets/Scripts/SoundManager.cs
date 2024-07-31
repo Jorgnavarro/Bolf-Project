@@ -44,10 +44,12 @@ public class SoundManager : MonoBehaviour
         float volumenVFX = sliderVFX.value;
         mixerGeneral.SetFloat("VFX", Mathf.Log10(volumenVFX)*20);
     }
-
-    // Update is called once per frame
-    void Update()
+        public void ApretarBoton()
     {
-        
+        soundManagerVFX.PlayOneShot(sonidosGolpes[3]);
+    }
+    public void SeleccionarBoton()
+    {
+        soundManagerVFX.PlayOneShot(sonidosGolpes[4]);
     }
 }

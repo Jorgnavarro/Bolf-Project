@@ -42,11 +42,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5809884689250127514, guid: 123d902e27e5cf84bb7a624effcde01b, type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d2011650f5e7beb469c47406a0f52c32, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -179,6 +179,9 @@ MonoBehaviour:
   sonidosGolpes:
   - {fileID: 8300000, guid: 47e04259bdd7b27468a208af293b8037, type: 3}
   - {fileID: 8300000, guid: 44592206b8934a949b44754ec504eae7, type: 3}
+  - {fileID: 8300000, guid: c772698ec09d80e44a9cc9addacf98d7, type: 3}
+  - {fileID: 8300000, guid: f6af3b35d1a592a48ad3877a798e61c5, type: 3}
+  - {fileID: 8300000, guid: a1d8de0e63a66814a844696ab5216543, type: 3}
   mixerGeneral: {fileID: 24100000, guid: 123d902e27e5cf84bb7a624effcde01b, type: 2}
   sliderMusic: {fileID: 0}
   sliderVFX: {fileID: 0}
@@ -228,7 +231,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
