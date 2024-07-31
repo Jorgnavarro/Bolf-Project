@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 8299378494873327439}
   - component: {fileID: 8299378494873327436}
   - component: {fileID: 8299378494873327437}
+  - component: {fileID: 1909213689}
   m_Layer: 0
   m_Name: PlayerBall
   m_TagString: Untagged
@@ -161,8 +162,8 @@ Transform:
   m_GameObject: {fileID: 8299378494873327434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -16.5, y: 1.94, z: 30.73}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8299378493735300448}
   m_Father: {fileID: 0}
@@ -262,3 +263,17 @@ MonoBehaviour:
   lineRenderer: {fileID: 8299378493735300451}
   stopVelocity: 0.05
   shootPower: 800
+--- !u!114 &1909213689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8299378494873327434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6fc7d7c18cf5b409bebc515fea9009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bolaRb: {fileID: 0}
+  polvoParticula: {fileID: 19800000, guid: 5b6c2f68addb63847b151f0d41a9d3b1, type: 3}
