@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb3b842e5ea867143a67e1771b72a258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 0}
+  ball: {fileID: 6875161514824953107, guid: 55ba90b3423e83d4ca828ecff8ff4ab7, type: 3}
   offset: {x: 0.09, y: 1.08, z: -3.88}
   rotationSpeed: 100
 --- !u!114 &1311523334528009849
