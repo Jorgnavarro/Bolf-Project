@@ -1,23 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StaticCamera : MonoBehaviour
 {
- public Transform player; // El transform de la bola
-    public Vector3 offset;   // La posición relativa de la cámara respecto al jugador
+    public Transform player; // Transform del jugador
+    public float rotationSpeed = 100.0f; // Velocidad de rotación en grados por segundo
 
     void LateUpdate()
     {
-        if (player != null)
+        // Asegúrate de que el jugador esté asignado
+        if (player == null)
         {
-            // posición de la cámara sin rotación en X
-            Vector3 targetPosition = player.position + offset;
-
-
-
-            // Mueve la cámara a la posición deseada
-            transform.position = targetPosition;
+            Debug.LogWarning("Player transform is not assigned.");
+            return;
         }
+
+        // Rotar la cámara a la izquierda cuando se presiona "Q"
+        if (Input.GetKey(KeyCode.Q))
+        {
+            RotateCamera(-rotationSpeed * Time.deltaTime);
+        }
+
+        // Rotar la cámara a la derecha cuando se presiona "E"
+        if (Input.GetKey(KeyCode.E))
+        {
+            RotateCamera(rotationSpeed * Time.deltaTime);
+        }
+    }
+
+    void RotateCamera(float angle)
+    {
+        // Rote la cámara alrededor del jugador en el eje Y
+        transform.RotateAround(player.position, Vector3.up, angle);
     }
 }
