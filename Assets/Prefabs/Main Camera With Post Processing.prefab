@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311523334528009842}
-  m_LocalRotation: {x: 0.20246951, y: -0, z: -0, w: 0.9792886}
+  m_LocalRotation: {x: 0.20247108, y: 0, z: 0, w: 0.9792883}
   m_LocalPosition: {x: 0.09, y: 1.08, z: -3.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -98,8 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb3b842e5ea867143a67e1771b72a258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  ball: {fileID: 0}
   offset: {x: 0.09, y: 1.08, z: -3.88}
+  rotationSpeed: 100
 --- !u!114 &1311523334528009849
 MonoBehaviour:
   m_ObjectHideFlags: 0
