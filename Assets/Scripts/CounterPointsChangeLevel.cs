@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class CounterPointsChangeLevel : MonoBehaviour
 {
     [SerializeField] GameObject playerBall;
+    [SerializeField] GameObject panelWin;
+    [SerializeField] GameObject panelLose;
+    
     private DectectWinZonePlayer scriptWinZoneFromPlayer;
     public int playerPoints = 0;
     public float delayTime = 1.5f;
@@ -58,7 +63,7 @@ public class CounterPointsChangeLevel : MonoBehaviour
         if (playerPoints <= 30)
         {
             Debug.Log("You lose the game");
-            //GameOverText Canva
+            panelLose.SetActive(true);
         }
         else if (playerPoints > 30)
         {
@@ -78,12 +83,13 @@ public class CounterPointsChangeLevel : MonoBehaviour
 
     private void TransportPlayerToLevel1()
     {
+        playerPoints = 0;
         playerBall.transform.position = changeToLevel2;
     }
 
     private void PlayerVictory()
     {
-        //Canva para victoria
+        panelWin.SetActive(true);
     }
 
 
