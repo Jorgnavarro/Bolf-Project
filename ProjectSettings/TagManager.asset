@@ -11,6 +11,8 @@ TagManager:
   - Coin
   - Floor
   - Target
+  - LimitLevel1
+  - LimitLevel2
   layers:
   - Default
   - TransparentFX
