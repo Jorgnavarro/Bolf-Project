@@ -9,4 +9,15 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(nameScene);
     }
+
+    public void PauseButton()
+    {
+        Time.timeScale = 0f;
+    }
+
+        public void DisPauseButton()
+    {
+        Time.timeScale = 1f;
+    }
+
 }
