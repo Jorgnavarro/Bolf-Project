@@ -16,7 +16,7 @@ public class DetectorColisionesBola : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) 
     {
-        if(other.gameObject.CompareTag("Suelo"))
+        if(other.gameObject.CompareTag("Suelo") || other.gameObject.CompareTag("WinZone1") || other.gameObject.CompareTag("WinZone2"))
         {
             SoundManager.Instance.soundManagerVFX.PlayOneShot(SoundManager.Instance.sonidosGolpes[0]);
             Instantiate(golpesSuperficies, transform.position, transform.rotation);
@@ -26,7 +26,6 @@ public class DetectorColisionesBola : MonoBehaviour
             SoundManager.Instance.soundManagerVFX.PlayOneShot(SoundManager.Instance.sonidosGolpes[2]);
             Instantiate(golpesSuperficies, transform.position, transform.rotation);
         }
-     
     }
 
     private void OnTriggerEnter(Collider other) {

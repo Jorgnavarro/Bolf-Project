@@ -146,6 +146,8 @@ GameObject:
   - component: {fileID: 8253461137404906599}
   - component: {fileID: 8253461137404906598}
   - component: {fileID: 8253461137404906592}
+  - component: {fileID: 1831875558}
+  - component: {fileID: 1831875565}
   m_Layer: 0
   m_Name: PlayerBall
   m_TagString: Player
@@ -279,3 +281,29 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &1831875558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8253461137404906601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d60d466cc4ded4d966e7b770556bdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1831875565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8253461137404906601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 070a291c381676247b0b7f200520a04f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsPlayerInZone1: 0
+  IsPlayerInZone2: 0
