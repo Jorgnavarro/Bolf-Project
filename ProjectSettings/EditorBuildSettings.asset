@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/JorgSpace.unity
+    guid: b8a505c33a8401c4c8a89b41e55be5ea
   m_configObjects: {}
