@@ -4,13 +4,28 @@ using UnityEngine;
 
 public class CounterPointsChangeLevel : MonoBehaviour
 {
+    [SerializeField] GameObject playerBall;
+    private DectectWinZonePlayer scriptWinZoneFromPlayer;
     public int playerPoints = 0;
+    public float delayTime = 1.5f;
+    public bool isPlayerInWinZone = false;
+    private Vector3 changeToLevel2 = new Vector3(0f, 1.0f, 252.3665f);
+
+    private void Start()
+    {
+        scriptWinZoneFromPlayer = playerBall.GetComponent<DectectWinZonePlayer>();
+
+        if (scriptWinZoneFromPlayer == null)
+        {
+            Debug.LogError("DectectWinZonePlayer component not found on the same GameObject.");
+        }
+    }
 
     private void Update()
     {
-       if (playerPoints > 0)
+        if (playerPoints > 0 && isPlayerInWinZone)
         {
-            ConditionWinLevel();
+            StartCoroutine(WaitAndCheckCondition());
         }
     }
 
@@ -18,8 +33,24 @@ public class CounterPointsChangeLevel : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ping"))
         {
-            playerPoints += 10; 
+            playerPoints += 10;
+            Debug.Log("Player points: " + playerPoints);
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isPlayerInWinZone = true;
+            Debug.Log("Player entered win zone");
+        }
+    }
+
+    private IEnumerator WaitAndCheckCondition()
+    {
+        yield return new WaitForSeconds(delayTime);
+        ConditionWinLevel();
     }
 
     private void ConditionWinLevel()
@@ -27,11 +58,32 @@ public class CounterPointsChangeLevel : MonoBehaviour
         if (playerPoints <= 30)
         {
             Debug.Log("You lose the game");
+            //GameOverText Canva
         }
-        if (playerPoints > 30)
+        else if (playerPoints > 30)
         {
             Debug.Log("You Pass the level");
+            if (scriptWinZoneFromPlayer != null && scriptWinZoneFromPlayer.IsPlayerInZone1)
+            {
+                Debug.Log("Player is in Zone 1, changing level...");
+                TransportPlayerToLevel1();
+            }
+
+            if(scriptWinZoneFromPlayer != null && scriptWinZoneFromPlayer.IsPlayerInZone2)
+            {
+                PlayerVictory();
+            }
         }
+    }
+
+    private void TransportPlayerToLevel1()
+    {
+        playerBall.transform.position = changeToLevel2;
+    }
+
+    private void PlayerVictory()
+    {
+        //Canva para victoria
     }
 
 
