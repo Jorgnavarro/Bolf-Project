@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class LimitRestartPosition : MonoBehaviour
 {
-    [SerializeField] GameManager gameManager;
-    [SerializeField] Transform playerBall;
-    private Vector3 initialPosition = new Vector3(0.09f, 0.5f, 252.3665f);
+    private Vector3 initialPositionLevel1 = new Vector3(0, 0.25f, 4.81f);
+    private Vector3 initialPositionLevel2 = new Vector3(0.09f, 0.5f, 252.3665f);
 
-    private void Start()
-    {
-        gameManager = GameObject.FindAnyObjectByType<GameManager>();
-    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if(other.gameObject.CompareTag("LimitLevel1"))
+        { 
+            transform.position = initialPositionLevel1;
+        }
+
+        if (other.gameObject.CompareTag("LimitLevel2"))
         {
-            //gameManager.GameDefined("JorgSpace");
-            playerBall.transform.position = initialPosition;
+            transform.position = initialPositionLevel2;
         }
     }
 
