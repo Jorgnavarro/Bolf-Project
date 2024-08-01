@@ -1,10 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyTarget : MonoBehaviour
+public abstract class Target : MonoBehaviour
 {
-    public bool isDestroyed = false;
+    public abstract bool IsDestroyed { get; }
+
+}
+
+public class DestroyTarget : Target
+{
+    public bool isDestroyed;
+    public override bool IsDestroyed => isDestroyed;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -14,4 +19,5 @@ public class DestroyTarget : MonoBehaviour
             isDestroyed = true;
         }
     }
+
 }
