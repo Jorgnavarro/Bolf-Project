@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public void GameDefined(string nameScene)
     {
-        SceneManager.LoadScene(nameScene);
+        SceneManager.LoadScene("JorgSpace");
     }
 
     public void PauseButton()
