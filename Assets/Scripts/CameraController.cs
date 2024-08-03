@@ -5,12 +5,18 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+
+    
     public Camera fixedCamera; // Cámara fija al jugador
     public Camera movableCamera; // Cámara movible
 
     private bool useFixedCamera = true; // Controla qué cámara está activa
 
-    void Start()
+    public Teletransportador teletransportador;
+
+    public int nivelActual = 2; 
+
+    void Start()    
     {
         
         fixedCamera.gameObject.SetActive(true);
@@ -25,6 +31,10 @@ public class CameraController : MonoBehaviour
             useFixedCamera = !useFixedCamera; // Alternar entre cámaras
             fixedCamera.gameObject.SetActive(useFixedCamera);
             movableCamera.gameObject.SetActive(!useFixedCamera);
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            teletransportador.Teletransportar(1);
         }
     }
 }
